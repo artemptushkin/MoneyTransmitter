@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static javax.ws.rs.core.Response.Status.FORBIDDEN;
+import static javax.ws.rs.core.Response.Status.NOT_FOUND;
 
 @ApplicationScoped
 public class ExceptionStorage {
@@ -15,8 +16,9 @@ public class ExceptionStorage {
 
     @PostConstruct
     public void setUpStorage() {
-        exceptionStatusMap.put(AccountNotFoundException.class, FORBIDDEN);
+        exceptionStatusMap.put(AccountNotFoundException.class, NOT_FOUND);
         exceptionStatusMap.put(AccountLackException.class, FORBIDDEN);
+        exceptionStatusMap.put(NotAllowedTransferException.class, FORBIDDEN);
     }
 
     public Response.Status get(Exception exception) {

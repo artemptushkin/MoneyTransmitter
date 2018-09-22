@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 @Named
 @RequestScoped
 public class AccountService {
-    @PersistenceContext
+    @PersistenceContext(name = "transmitter-jpa")
     private EntityManager em;
 
     @Transactional(rollbackOn = {AccountNotFoundException.class, AccountLackException.class})
