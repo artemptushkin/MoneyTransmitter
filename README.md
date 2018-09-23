@@ -5,7 +5,9 @@ Frameworks:
 WildFly Swarm + Arquillian + Apache HttpCommons for tests
 
 Build:
+```console
 mvn clean package
+```
 
 Run:
 
